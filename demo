@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+import sys
+
+import numpy
+import requests
+
+print(f"VERSION   : {sys.version}\n")
+print(f"EXECUTABLE: {sys.executable}\n")
+
+myglobal = "Global variable\n"
+
+
+def foo():
+    #global myglobal
+
+    myglobal = "Updated global variable"
+    print(myglobal)
+
+
+foo()
+print(myglobal)
+
+page = requests.get("http://duckduckgo.com")
+print(page.status_code)
