@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-import sys
 import os
+import statistics
+import sys
 
 import numpy
 import requests
@@ -11,9 +12,16 @@ print(f"EXECUTABLE: {sys.executable}\n")
 myglobal = "Global variable\n"
 
 
+def calculate_mean(input_lst):
+    mean = statistics.mean(input_lst)
+    return mean
+
+
+print(f"MEAN: {calculate_mean([10, 9])}")
+
+
 def foo():
     #global myglobal
-
     myglobal = "Updated global variable"
     print(myglobal)
 
